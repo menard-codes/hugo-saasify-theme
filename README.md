@@ -177,7 +177,7 @@ paginatePath = "page"
 [params]
   description = "Your site description"
   author = "Your Name"
-  logo = "/images/logo.svg"      # Path to your logo
+  logo = "/images/logo.png"      # Path to your logo
   # Google Analytics ID (e.g., "G-XXXXXXXXXX")
   googleAnalytics = "G-XXXXXXXXXX"  # Only enabled in production
 
@@ -192,7 +192,7 @@ paginatePath = "page"
     
     # Header Logo
     [params.header.logo]
-      src = "/images/logo.svg"
+      src = "/images/logo.png"
     
     # Header Buttons (optional)
     [params.header.buttons]

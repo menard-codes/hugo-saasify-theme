@@ -1,0 +1,94 @@
+<div class="grid gap-4 max-w-2xl mx-auto">
+  <!-- Support Email Card -->
+  <address
+    class="border border-gray-200 rounded-xl p-6"
+    style="font-style: normal"
+  >
+    <div class="flex items-start justify-between">
+      <div class="flex-1">
+        <div class="flex justify-between">
+          <h3 class="text-lg font-semibold text-gray-900" style="margin: 0">
+            Need More Help?
+          </h3>
+          <div
+            class="ml-4 w-10 h-10 bg-green-50 rounded-lg flex gap-4 items-center justify-center flex-shrink-0"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-10 h-10 text-green-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
+            </svg>
+          </div>
+        </div>
+        <p class="text-sm text-gray-500 mb-4">
+          Can't find what you're looking for? Send us an email and we'll get
+          back to you within 1 business day.
+        </p>
+        <div class="flex items-center gap-2">
+          <a
+            class="flex-1 bg-gray-100 rounded-lg px-4 py-2 text-sm text-gray-600 text-center font-mono font-semibold"
+            href="mailto:support@syncor-alt.com"
+          >
+            support@syncor-alt.com
+          </a>
+          <button
+            onclick="
+              navigator.clipboard
+                .writeText('support@syncor-alt.com')
+                .then(() => {
+                  this.textContent = 'Copied!';
+                  setTimeout(() => (this.textContent = 'Copy'), 2000);
+                })
+            "
+            class="px-4 py-2 text-sm font-medium text-gray-700 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Request Banner -->
+    <div
+      class="mt-4 bg-blue-100 px-6 py-4 flex flex-col gap-2"
+      style="border-radius: 18px"
+    >
+      <div class="flex gap-2 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 16v-4m0-4h.01"
+          />
+        </svg>
+        <p class="font-semibold" style="margin: 0; font-size: 15px">
+          Feature Request
+        </p>
+      </div>
+      <p class="text-sm text-blue-800" style="margin: 0">
+        Have an idea or suggestion? We'd love to hear it — reach out at
+        <br />
+        <a href="mailto:support@syncor-alt.com" class="font-bold"
+          >support@syncor-alt.com</a
+        >
+      </p>
+    </div>
+  </address>
+</div>

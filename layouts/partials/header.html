@@ -6,14 +6,14 @@
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
             <nav class="flex items-center justify-between h-20">
                 <!-- Logo and Title -->
-                <a href="{{ "/" | relLangURL }}" class="flex items-center space-x-4">
+                <a href="{{ "/" | relLangURL }}" class="flex items-center space-x-4" title="Syncor Alt | AI Alt Text Generator">
                     {{ with $headerConfig.logo }}
-                        <img src="{{ .src | relURL }}" alt="{{ $.Site.Title }}" class="{{ with .class }}{{ . }}{{ else }}h-12{{ end }}">
+                        <img src="{{ .src | relURL }}" alt="{{ $.Site.Title }}" class="rounded-md {{ with .class }}{{ . }}{{ else }}h-12{{ end }}">
                     {{ else }}
                         <span class="text-3xl font-bold text-gray-900">{{ .Site.Title }}</span>
                     {{ end }}
                     {{ if .Site.Title }}
-                        <span class="text-3xl font-semibold text-gray-800">{{ .Site.Title }}</span>
+                        <span class="text-3xl font-bold text-gray-800">{{ .Site.Title }}</span>
                     {{ end }}
                 </a>
 
@@ -48,15 +48,21 @@
                 <!-- CTA Buttons -->
                 {{ if not $headerConfig.hideButtons }}
                 <div class="hidden md:flex items-center space-x-4">
+                    <a href="https://apps.shopify.com/syncor-alt" target="_blank">
+                        <img
+                            src="/images/badge-shopify-app-store-dark.svg"
+                            alt="Available on Shopify App Store Dark Badge"
+                        />
+                    </a>
                     {{ with $headerConfig.buttons.signIn }}
                     <a href="{{ .url | default "#" }}" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-gray-200 hover:border-primary-600 hover:text-primary-600{{ end }}">
                         {{ .text | default "Sign in" }}
                     </a>
                     {{ end }}
                     
-                    {{ with $headerConfig.buttons.getStarted }}
-                    <a href="{{ .url | default "#" }}" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
-                        {{ .text | default "Get Started" }}
+                    {{ with $headerConfig.buttons.install }}
+                    <a href="{{ .url | default "#" }}" target="_blank" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
+                        {{ .text | default "Install" }}
                     </a>
                     {{ end }}
                 </div>
@@ -116,9 +122,9 @@
                     </a>
                     {{ end }}
                     
-                    {{ with $headerConfig.buttons.getStarted }}
-                    <a href="{{ .url | default "#" }}" class="{{ with .mobileClass }}{{ . }}{{ else }}block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
-                        {{ .text | default "Get Started" }}
+                    {{ with $headerConfig.buttons.install }}
+                    <a href="{{ .url | default "#" }}" target="_blank" class="{{ with .mobileClass }}{{ . }}{{ else }}block text-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
+                        {{ .text | default "Install" }}
                     </a>
                     {{ end }}
                 </div>
