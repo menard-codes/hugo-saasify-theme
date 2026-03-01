@@ -60,12 +60,6 @@
     
     <!-- Main CSS -->
     <link rel="stylesheet" href="/css/style.css">
-    <!-- {{ $css := resources.Get "css/main.css" }}
-    {{ $css = $css | css.PostCSS }}
-    {{ if hugo.IsProduction }}
-        {{ $css = $css | minify | fingerprint | resources.PostProcess }}
-    {{ end }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}"> -->
 
     <!-- Additional Meta Tags from Front Matter -->
     {{ with .Params.customMeta }}
