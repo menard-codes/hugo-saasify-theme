@@ -12,8 +12,8 @@
                     {{ else }}
                         <span class="text-3xl font-bold text-gray-900">{{ .Site.Title }}</span>
                     {{ end }}
-                    {{ if .Site.Title }}
-                        <span class="text-3xl font-bold text-gray-800">{{ .Site.Title }}</span>
+                    {{ if .Site.Params.brand_name }}
+                        <span class="text-3xl font-bold text-gray-800">{{ .Site.Params.brand_name }}</span>
                     {{ end }}
                 </a>
 
