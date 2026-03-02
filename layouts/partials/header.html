@@ -8,7 +8,7 @@
                 <!-- Logo and Title -->
                 <a href="{{ "/" | relLangURL }}" class="flex items-center space-x-4" title="Syncor Alt | AI Alt Text Generator">
                     {{ with $headerConfig.logo }}
-                        <img src="{{ .src | relURL }}" alt="{{ $.Site.Title }}" class="rounded-md {{ with .class }}{{ . }}{{ else }}h-12{{ end }}">
+                        <img src="{{ .src | relURL }}" alt="{{ $.Site.Title }}" class="rounded-md {{ with .class }}{{ . }}{{ else }}h-12{{ end }}" loading="lazy">
                     {{ else }}
                         <span class="text-3xl font-bold text-gray-900">{{ .Site.Title }}</span>
                     {{ end }}
@@ -52,6 +52,7 @@
                         <img
                             src="/images/badge-shopify-app-store-dark.svg"
                             alt="Available on Shopify App Store Dark Badge"
+                            loading="lazy"
                         />
                     </a>
                     {{ with $headerConfig.buttons.signIn }}
