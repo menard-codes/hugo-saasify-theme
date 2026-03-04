@@ -48,7 +48,8 @@
                 <!-- CTA Buttons -->
                 {{ if not $headerConfig.hideButtons }}
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://apps.shopify.com/syncor-alt" target="_blank">
+                    <!-- TODO: Show on release -->
+                    <!-- <a href="https://apps.shopify.com/syncor-alt" target="_blank">
                         <img
                             src="/images/badge-shopify-app-store-dark.svg"
                             alt="Available on Shopify App Store Dark Badge"
@@ -56,7 +57,7 @@
                             width="166"
                             height="44"
                         />
-                    </a>
+                    </a> -->
                     {{ with $headerConfig.buttons.signIn }}
                     <a href="{{ .url | default "#" }}" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out border-2 border-gray-200 hover:border-primary-600 hover:text-primary-600{{ end }}">
                         {{ .text | default "Sign in" }}
@@ -67,6 +68,12 @@
                     <a href="{{ .url | default "#" }}" target="_blank" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
                         {{ .text | default "Install" }}
                     </a>
+                    {{ end }}
+
+                    {{ with $headerConfig.buttons.joinWaitList }}
+                        <a href="{{ .url | default "#" }}" target="_blank" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
+                            {{ .text | default "Install" }}
+                        </a>
                     {{ end }}
                 </div>
                 {{ end }}
@@ -130,8 +137,24 @@
                         {{ .text | default "Install" }}
                     </a>
                     {{ end }}
+
+                    {{ with $headerConfig.buttons.joinWaitList }}
+                        <a href="{{ .url | default "#" }}" target="_blank" class="{{ with .class }}{{ . }}{{ else }}inline-flex items-center justify-center px-6 py-3 rounded-lg font-bold transition duration-200 ease-in-out bg-primary-600 text-white hover:bg-primary-700 hover:scale-105{{ end }}">
+                            {{ .text | default "Install" }}
+                        </a>
+                    {{ end }}
                 </div>
                 {{ end }}
+                <!-- TODO: Show on release -->
+                <!-- <a href="https://apps.shopify.com/syncor-alt" target="_blank">
+                    <img
+                        src="/images/badge-shopify-app-store-dark.svg"
+                        alt="Available on Shopify App Store Dark Badge"
+                        loading="lazy"
+                        width="166"
+                        height="44"
+                    />
+                </a> -->
             </div>
         </div>
     </header>

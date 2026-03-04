@@ -37,9 +37,9 @@ $background_image := .Get "background_image" }} {{ $gradient_from := .Get
           {{ $headline | safeHTML }}
         </h1>
         <p class="text-xl text-gray-600">{{ $sub_headline | safeHTML }}</p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          {{ if and $primary_button_text $primary_button_url }}
-          <div class="grid gap-2" style="justify-items: start">
+        <div class="grid gap-2">
+          <div class="flex flex-col sm:flex-row gap-4 items-start">
+            {{ if and $primary_button_text $primary_button_url }}
             <a
               href="{{ $primary_button_url }}"
               target="_blank"
@@ -47,18 +47,21 @@ $background_image := .Get "background_image" }} {{ $gradient_from := .Get
             >
               {{ $primary_button_text }}
             </a>
-            <p class="text-gray-600 text-sm">{{ $primary_btn_description }}</p>
+            {{ end }} {{ if and $secondary_button_text $secondary_button_url }}
+            <a
+              href="{{ $secondary_button_url }}"
+              class="btn-outline text-center"
+            >
+              {{ $secondary_button_text }}
+            </a>
+            {{ end }}
           </div>
-          {{ end }} {{ if and $secondary_button_text $secondary_button_url }}
-          <a href="{{ $secondary_button_url }}" class="btn-outline text-center">
-            {{ $secondary_button_text }}
-          </a>
-          {{ end }}
+          <p class="text-gray-600 text-sm">{{ $primary_btn_description }}</p>
         </div>
       </div>
       <iframe
         src="https://www.youtube.com/embed/kX-rK53NHQ4?si=-xY9LI5lC5msuch_"
-        title="YouTube video player"
+        title="Syncor Alt - Featured Video"
         frameborder="0"
         allow="
           accelerometer;
