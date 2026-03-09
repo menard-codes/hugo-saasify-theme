@@ -16,7 +16,12 @@
         {{ partial "components/subscribe-form" $params }}
     {{ end }}
 
-    {{ partial "components/social-share" }}
+    {{
+        $socialShareParams := dict
+            "title" .Title
+            "url" .Permalink
+    }}
+    {{ partial "components/social-share" $socialShareParams }}
 
     <!-- Recent Articles -->
     {{ if .Site.Params.blog.sidebar.recent.enable }}
