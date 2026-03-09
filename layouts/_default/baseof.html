@@ -59,7 +59,12 @@
 
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ .Permalink }}">
+    <!-- <link rel="canonical" href="{{ .Permalink }}"> -->
+    {{ if .IsHome }}
+        <link rel="canonical" href='{{ .Site.BaseURL | strings.TrimRight "/" }}' />
+    {{ else }}
+        <link rel="canonical" href="{{ .Permalink }}" />
+    {{ end }}
     
     <!-- Fonts -->
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
