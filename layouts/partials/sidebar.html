@@ -16,6 +16,8 @@
         {{ partial "components/subscribe-form" $params }}
     {{ end }}
 
+    {{ partial "components/social-share" }}
+
     <!-- Recent Articles -->
     {{ if .Site.Params.blog.sidebar.recent.enable }}
         <div class="bg-white rounded-lg shadow-md p-6">
