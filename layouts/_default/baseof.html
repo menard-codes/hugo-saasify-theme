@@ -87,7 +87,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <!-- Google Tag Manager (noscript) -->
-    {{ if and hugo.IsProduction .Site.Params.googleTagManager }}
+    {{ if and (eq hugo.Environment "production") (.Site.Params.googleTagManager) }}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ .Site.Params.googleTagManager }}"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{ end }}
