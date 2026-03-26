@@ -26,11 +26,24 @@
     <meta property="og:site_name" content="{{ .Site.Title }}">
     {{ if .Params.featured_image }}
         <meta property="og:image" content="{{ .Params.featured_image | absURL }}">
+        {{ if .Params.featured_image_alt }}
+            <meta property="og:image:alt" content="{{ .Params.featured_image_alt }}" />
+        {{ else }}
+            <meta property="og:image:alt" content="{{ .Site.Title }}" />
+        {{ end }}
     {{ else if .Params.image }}
         <meta property="og:image" content="{{ .Params.image | absURL }}">
+        {{ if .Params.image_alt }}
+            <meta property="og:image:alt" content="{{ .Params.image_alt }}" />
+        {{ else }}
+            <meta property="og:image:alt" content="{{ .Site.Title }}" />
+        {{ end }}
     {{ else }}
         {{ with .Site.Params.image }}
-        <meta property="og:image" content="{{ . | absURL }}">
+            <meta property="og:image" content="{{ . | absURL }}">
+        {{ end }}
+        {{ with .Site.Params.image_alt }}
+            <meta property="og:image:alt" content="{{ . }}" />
         {{ end }}
     {{ end }}
 
@@ -46,6 +59,18 @@
         {{ with .Site.Params.image }}
         <meta name="twitter:image" content="{{ . | absURL }}">
         {{ end }}
+    {{ end }}
+    
+    {{ if .Params.twitter_site_handle }}
+        <meta name="twitter:image" content="{{ .Params.twitter_site_handle }}">
+    {{ else }}
+        {{ with .Site.Params.twitter.siteHandle }}
+        <meta name="twitter:site" content="{{ . }}">
+        {{ end }}
+    {{ end }}
+
+    {{ if .Params.twitter_creator }}
+        <meta name="twitter:creator" content="{{ .Params.twitter_creator }}">
     {{ end }}
 
     <!-- Favicon -->
